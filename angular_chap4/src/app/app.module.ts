@@ -3,11 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
+import { EventComponent } from './event.component';
+import { BookComponent } from './book.component';
+import { WingsComponent } from './wings.component';
+
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent ],
-  // providers: [{provide: LOCALE_ID, useValue: 'de-DE'}],
+  declarations: [ AppComponent, EventComponent, BookComponent, WingsComponent ],
+  entryComponents: [EventComponent, BookComponent, WingsComponent ],
+  providers: [{provide: LOCALE_ID, useValue: 'ja-JP'}],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
