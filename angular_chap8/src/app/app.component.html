@@ -1,1 +1,20 @@
-<p>Hello, Angular!</p>
+<ul>
+  <li><a routerLink='/' routerLinkActive='current' [routerLinkActiveOptions]='{exact: true}'>メインページ</a></li>
+  <li><a routerLink='/contents/100/pages/1' routerLinkActive='current'>新記事 No.100</a></li>
+  <li><a [routerLink]="['/contents', '108', 'pages', '1']" routerLinkActive='current'>新記事 No.108</a></li>
+
+
+  <li><a [routerLink]="['/hatena', 'http://gihyo.jp/']" routerLinkActive='current'>ブックマークコメント</a></li>
+  <li><a routerLink='/search/Angular/karma/Rx' routerLinkActive='current'>[Angular/Karma/Rx]の検索</a></li>
+  <li><a routerLink='param' routerLinkActive='current' [queryParams]="{category: 'Angular', keyword: 'Routing'}" fragment="hoge">クエリ情報/フラグメント</a></li>
+  <li><a routerLink='exam' queryParamsHandling='preserve' preserveFragment routerLinkActive='current'>クエリ情報/フラグメント（維持）</a></li>
+  <li><a routerLink='/article/13' routerLinkActive='current'>記事 No.13</a></li>
+  <li><a routerLink='/article/108' routerLinkActive='current'>記事 No.108</a></li>
+  <li><a [routerLink]="['/article', 100]" routerLinkActive='current'>記事 No.100</a></li>
+  <li><a routerLink='/exam' routerLinkActive='current'>Exampleページ</a></li>
+  <li><a routerLink='/dummy' routerLinkActive='current'>不正なページ</a></li>
+</ul>
+<hr />
+<router-outlet></router-outlet>
+<hr />
+<router-outlet name='other'></router-outlet>
