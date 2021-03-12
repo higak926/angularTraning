@@ -1,0 +1,60 @@
+<!-- <table class='table'>
+  <tr>
+    <th>ISBNコード</th><th>書籍</th><th>価格</th><th>出版社</th>
+  </tr>
+  <tr *ngFor='let b of books'>
+    <td>{{b.isbn}}</td>
+    <td>{{b.title}}</td>
+    <td>{{b.price}}</td>
+    <td>{{b.publisher}}</td>
+  </tr>
+</table> -->
+
+<!-- <ul>
+  <my-use></my-use>
+  <my-use></my-use>
+  <my-use></my-use>
+</ul> -->
+
+<!-- <p>AppComponent：{{over.show()}}</p>
+<my-child></my-child> -->
+
+<!-- <my-noparent></my-noparent> -->
+<!-- <my-parent>
+  <my-child></my-child>
+</my-parent> -->
+
+<!-- <form>
+  <label for='name'>名前：</label>
+  <input id='name' name='name' type='text' [(ngModel)]='name' />
+  <input type='button' (click)='onclick()' value='送信' />
+</form>
+<div>{{result}}</div> -->
+
+<!-- <form>
+  <label for='url'>URL：</label>
+  <input id='url' name='url' type='url' size='50' [(ngModel)]='url' />
+  <input type='button' (click)='onclick()' value='検索' />
+</form>
+<div>{{count}}</div>
+<ul>
+  <li *ngFor='let comment of comments'>{{comment}}</li>
+</ul> -->
+
+<!-- <ul>
+  <li *ngFor='let b of books'>{{b.title}}({{b.price}}円)</li>
+</ul>
+id=<input type='text' #num size='2' />
+<input type='button' (click)='get(num.value)' value='表示' />
+<input type='button' (click)='insert()' value='追加' />
+<input type='button' (click)='update()' value='更新' />
+<input type='button' (click)='delete()' value='削除' /> -->
+
+<!-- <div>
+  サーバーからのメッセージ：{{message | async}}
+</div> -->
+
+<div *ngIf='message | async as msg; else prog'>
+  サーバーからのメッセージ：{{msg}}
+</div>
+<ng-template #prog>Now Loding ...</ng-template>
