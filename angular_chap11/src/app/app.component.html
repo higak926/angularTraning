@@ -1,1 +1,69 @@
-<p>Hello, Angular!</p>
+<accordion [closeOthers]='true'>
+  <accordion-group heading='改訂新版JavaScript本格入門' [isOpen]='true'>
+    <p>「ECMAScript 2015」による新記法はもちろん...</p>
+  </accordion-group>
+
+  <accordion-group heading='はじめてのAndroidアプリ開発 第2版' [isDisabled]='true'>
+    <p>基礎から応用まで確実に学べるステップアップ...</p>
+  </accordion-group>
+
+  <accordion-group heading='[改訂新版]JavaScriptポケットリファレンス'>
+    <p>初版でのJava SE 6までの標準ライブラリに加え...</p>
+  </accordion-group>
+</accordion>
+
+<form #myForm='ngForm' (ngSubmit)='show()'>
+  <div>
+    <label for='url'>URL：</label><br />
+    <input id='url' name='url' type='url' [(ngModel)]='user.url' #url='ngModel' required url />
+    <span *ngIf='url.errors?.required'>URLは必須です。</span>
+    <span *ngIf='url.errors?.url'>URLを正しい形式で入力してください。</span>    
+  </div>
+
+  <div>
+    <label for='mail'>メールアドレス：</label><br />
+    <input id='mail' name='mail' type='email' [(ngModel)]='user.mail' #mail='ngModel' required email />
+    <span *ngIf='mail.errors?.required'>メールアドレスは必須です。</span>
+    <span *ngIf='mail.errors?.email'>メールアドレスを正しい形式で入力してください。</span>    
+  </div>
+
+  <div>
+    <label for='mail_confirm'>メールアドレス（確認）：</label><br />
+    <input id='mail_confirm' name='mail_confirm' type='email' [(ngModel)]='user.mail_confirm' #mail_confirm='ngModel' [equalTo]='mail' />
+    <span *ngIf='mail_confirm.errors?.equalTo'>メールアドレス同士が正しくないといけません。</span>
+  </div>
+
+  <div>
+    <input type='submit' value='送信' [disabled]='myForm.invalid' />
+  </div>
+</form>
+
+<!-- <form #myForm2='ngForm' (ngSubmit)='show2()'>
+  <div>
+    <label for='url2'>URL：</label><br />
+    <input id='url2' name='url2' type='url2' formControlName='url2' />
+    <span *ngIf='myForm.controls.url2.errors?.required'>URLは必須です。</span>
+    <span *ngIf='myForm.controls.url2.errors?.url'>URLを正しい形式で入力してください。</span>    
+  </div>
+
+  <div>
+    <label for='mail2'>メールアドレス：</label><br />
+    <input id='mail2' name='mail2' type='email' formControlName='mail2' />
+    <span *ngIf='myForm.controls.mail2.errors?.required'>メールアドレスは必須です。</span>
+    <span *ngIf='myForm.controls.mail2.errors?.email'>メールアドレスを正しい形式で入力してください。</span>    
+  </div>
+
+  <div>
+    <label for='mail_confirm2'>メールアドレス（確認）：</label><br />
+    <input id='mail_confirm2' name='mail_confirm2' type='email' formControlName='mail_confirm2' />
+    <span *ngIf='myForm.controls.mail_confirm2.errors?.equalTo'>メールアドレス同士が正しくないといけません。</span>
+  </div>
+
+  <div>
+    <input type='submit' value='送信' [disabled]='myForm2.invalid' />
+  </div>
+</form> -->
+
+<h1 i18n>Hello {{name}}</h1>
+<img src='http://www.wings.msn.to/image/wings.jpg' i18n-title title='WINGS Project Logo' />
+<ng-container i18n>This is i18n sample</ng-container>
