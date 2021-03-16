@@ -79,6 +79,7 @@ module.exports = function(config) {
 
     // Proxied base paths for loading assets
     proxies: {
+      '/app/': '/base/src/app/',
       // required for modules fetched by SystemJS
       '/base/src/node_modules/': '/base/node_modules/'
     },

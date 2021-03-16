@@ -1,1 +1,47 @@
-<p>Hello, Angular!</p>
+<h1>{{name}}</h1>
+<table>
+  <thead>
+    <tr>
+      <th>testテーブルヘッダー</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>test1</td>
+    </tr>
+    <tr>
+      <td>test2</td>
+    </tr>
+    <tr>
+      <td>test3</td>
+    </tr>
+    <tr>
+      <td>test4</td>
+    </tr>
+    <tr>
+      <td>test5</td>
+    </tr>
+  </tbody>
+</table>
+
+<form>
+  <label for="url">URL：</label>
+  <input id="url" name="url" type="url" size="50" [(ngModel)]="url" />
+  <button (click)="onclick()">検索</button>
+</form>
+<div>{{count}}件</div>
+<ul>
+  <li *ngFor="let comment of comments">{{comment}}</li>
+</ul>
+
+<ul>
+  <li><a routerLink="/" routerLinkActive="current"
+    [routerLinkActiveOptions]="{ exact: true }">
+    メインページ</a></li>
+  <li><a routerLink="/exam" routerLinkActive="current">
+    Exampleページ</a></li>
+  <li><a routerLink="/dummy" routerLinkActive="current">
+    不正なページ</a></li>
+</ul>
+<hr />
+<router-outlet></router-outlet>
